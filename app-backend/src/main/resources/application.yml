@@ -1,0 +1,10 @@
+server:
+  port: 8080
+spring:
+  cloud:
+    function:
+      definition: consumeMemberInfo;supplyMemberInfo;
+    stream:
+      bindings:
+        supplyMemberInfo-out-0:
+          destination: consumeMemberInfo-in-0

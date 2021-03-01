@@ -1,0 +1,12 @@
+spring:
+  cloud:
+    function:
+      definition: consumeMemberInfo;supplyMemberInfo;
+    stream:
+      bindings:
+        supplyMemberInfo-out-0:
+          content-type: application/json
+          destination: consumeMemberInfo-in-0
+  datasource:
+    username: root
+    password: password
