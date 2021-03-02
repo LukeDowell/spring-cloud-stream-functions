@@ -1,0 +1,18 @@
+spring:
+  cloud:
+    function:
+      definition: supplyAdjudicatedClaim;consumeAdjudicatedClaim;
+    stream:
+      bindings:
+        supplyAdjudicatedClaim-out-0:
+          content-type: application/json
+          destination: new-adjudicated-claim
+        consumeAdjudicatedClaim-out-0:
+          content-type: application/json
+          destination: new-adjudicated-claim
+        consumeAdjudicatedClaim-in-0:
+          content-type: application/json
+          destination: new-adjudicated-claim
+  datasource:
+    username: root
+    password: password

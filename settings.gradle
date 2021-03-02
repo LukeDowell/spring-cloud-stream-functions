@@ -1,4 +1,6 @@
 rootProject.name = 'spring-cloud-messaging'
 include 'app-backend'
 include 'app-ui'
-include 'client-ingestion'
+include 'transaction-ingestion'
+include 'member'
+include 'test-harness'
