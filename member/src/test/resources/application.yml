@@ -5,16 +5,12 @@ spring:
     stream:
       bindings:
         parseNewMembers-in-0:
-          content-type: application/json
           destination: new-adjudicated-claim
         parseNewMembers-out-0:
-          content-type: application/json
           destination: new-member-parsed
         ingestParsedMembers-in-0:
-          content-type: application/json
           destination: new-member-parsed
         ingestParsedMembers-out-0:
-          content-type: application/json
           destination: new-member-created
   datasource:
     username: root

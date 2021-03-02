@@ -1,15 +1,13 @@
 spring:
   cloud:
     function:
-      definition: consumeAdjudicatedClaim
+      definition: consumeAdjudicatedClaim;
     stream:
       bindings:
         consumeAdjudicatedClaim-out-0:
-          content-type: application/json
           destination: new-adjudicated-claim
         consumeAdjudicatedClaim-in-0:
-          content-type: application/json
-          destination: new-adjudicated-claim
+          destination: legacy-claim-in
   datasource:
     username: root
     password: password

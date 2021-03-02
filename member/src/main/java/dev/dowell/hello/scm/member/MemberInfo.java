@@ -1,9 +1,6 @@
 package dev.dowell.hello.scm.member;
 
-import lombok.AccessLevel;
-import lombok.Builder;
-import lombok.Data;
-import lombok.Setter;
+import lombok.*;
 
 import java.time.ZonedDateTime;
 import java.util.Optional;
@@ -11,6 +8,8 @@ import java.util.Optional;
 @Data
 @Setter(AccessLevel.PRIVATE)
 @Builder(toBuilder = true)
+@NoArgsConstructor
+@AllArgsConstructor
 public class MemberInfo {
     @Builder.Default
     private Optional<String> memberId = Optional.empty();

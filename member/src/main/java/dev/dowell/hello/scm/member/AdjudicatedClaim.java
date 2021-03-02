@@ -1,6 +1,5 @@
 package dev.dowell.hello.scm.member;
 
-import com.fasterxml.jackson.annotation.JsonUnwrapped;
 import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Data;
@@ -15,7 +14,6 @@ import java.util.List;
 public class AdjudicatedClaim {
     private String id;
 
-    @JsonUnwrapped
     private MemberInfo memberInfo;
 
     private List<ClaimTransaction> claimTransactions;

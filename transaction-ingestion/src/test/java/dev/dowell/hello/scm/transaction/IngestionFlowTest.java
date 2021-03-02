@@ -9,18 +9,8 @@ import org.springframework.context.ApplicationContext;
 
 @SpringBootTest
 public class IngestionFlowTest {
-
-    @Autowired
-    private ApplicationContext context;
-
     @Test
     public void contextLoads() {
 
-    }
-
-    @Test
-    public void destinationTest() {
-        InputDestination inputDestination = context.getBean(InputDestination.class);
-        OutputDestination outputDestination = context.getBean(OutputDestination.class);
     }
 }

@@ -4,7 +4,6 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import reactor.core.publisher.Flux;
-import reactor.core.publisher.Mono;
 import reactor.util.function.Tuple2;
 import reactor.util.function.Tuples;
 
@@ -17,13 +16,13 @@ import java.util.stream.Stream;
 public class IngestionFlow {
 
     @Bean
-    public Function<AdjudicatedClaim, Tuple2<Mono<MemberInfo>, Flux<AdjudicatedClaim.ClaimTransaction>>> consumeAdjudicatedClaim() {
+    public Function<Flux<AdjudicatedClaim>, Tuple2<Flux<MemberInfo>, Flux<AdjudicatedClaim.ClaimTransaction>>> consumeAdjudicatedClaim() {
         return adjudicatedClaim ->  {
             log.info("New incoming adjudicated claim: {}", adjudicatedClaim);
 
             return Tuples.of(
-                    Mono.just(MemberInfo.builder().build()),
-                    Flux.fromStream(Stream.empty())
+                    Flux.<MemberInfo>fromStream(Stream.empty()),
+                    Flux.<AdjudicatedClaim.ClaimTransaction>fromStream(Stream.empty())
             );
         };
     }
