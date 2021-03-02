@@ -15,7 +15,7 @@ import uk.co.jemos.podam.api.PodamFactoryImpl;
 import java.util.Optional;
 
 import static org.awaitility.Awaitility.await;
-import static org.hamcrest.Matchers.notNullValue;
+import static org.hamcrest.Matchers.equalTo;
 
 @SpringBootTest(classes = {TestSpringBootApplication.class, MemberFlow.class, TestChannelBinderConfiguration.class })
 @DirtiesContext
@@ -45,9 +45,9 @@ public class MemberFlowTest {
         await().until(
                 () -> {
                     var message = outputDestination.receive(1000L, "new-member-parsed");
-                    return objectMapper.readValue(message.getPayload(), NewMemberParsed.class);
+                    return objectMapper.readValue(message.getPayload(), NewMemberParsed.class).getMemberInfo().getName().get();
                 },
-                notNullValue()
+                equalTo(expectedNewMemberName)
         );
     }
 }
