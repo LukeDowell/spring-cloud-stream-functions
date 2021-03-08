@@ -8,7 +8,7 @@ There is a rabbitmq management panel available on port 15672.
 
 ## Project Problem Space
 
-The domain is a contrived and simplified pharmacy claim processing engine. The end result should be a web app that 
+The domain is a simplified pharmacy claim processing engine. The end result should be a web app that 
 presents information on members and their associated pharmaceutical claims. 
 
 The problem roadmap for this project is:
@@ -24,5 +24,6 @@ quickly these objects become weighed down by validation and domain logic that ar
 
 ## Useful links
 
+Spring Cloud Stream Samples - https://github.com/spring-cloud/spring-cloud-stream-samples
 Integrating foreign sources into event system - https://docs.spring.io/spring-cloud-stream/docs/current/reference/html/spring-cloud-stream.html#_sending_arbitrary_data_to_an_output_e_g_foreign_event_driven_sources
 

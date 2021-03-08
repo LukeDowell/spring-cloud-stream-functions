@@ -3,7 +3,7 @@ package dev.dowell.hello.scm.member;
 import java.util.HashMap;
 import java.util.Optional;
 
-public class LegacyMemberIdRepositoryImpl implements LegacyMemberIdRepository {
+public class SimpleLegacyMemberIdRepository implements LegacyMemberIdRepository {
 
     private final HashMap<String, String> memberIdToLegacyIdentifierMap = new HashMap<>();
 

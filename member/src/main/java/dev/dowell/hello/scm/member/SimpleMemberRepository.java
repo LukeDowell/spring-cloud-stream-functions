@@ -9,7 +9,7 @@ public class SimpleMemberRepository implements MemberRepository {
 
     @Override
     public void saveMember(Member member) {
-        memberMap.putIfAbsent(member.toString(), member);
+        memberMap.putIfAbsent(member.getId(), member);
     }
 
     @Override
